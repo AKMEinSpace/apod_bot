@@ -33,7 +33,7 @@ def get_img(api_response: Dict[str, str]) -> Img:
 
 def get_from_api(*, count=None) -> Iterable[Dict[str, str]]:
     """
-    Returns list of responces from APOD Api as List[Dicts] 
+    Returns list of responces from APOD Api as list of Responses 
     """
     base_url = f'https://api.nasa.gov/planetary/apod?api_key={api_key}'
     is_multiple_img = count and count > 1
@@ -48,6 +48,9 @@ def get_from_api(*, count=None) -> Iterable[Dict[str, str]]:
 
 
 def save_img(img: Img, *, folder: str = None):
+    """
+    Saves img to disc in optional folder with the img title as it's name
+    """
     save_name = f'{img.title}.jpg'
     save_path = save_name
 
