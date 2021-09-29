@@ -48,7 +48,7 @@ def get_from_api(*, count=None) -> Iterable[Dict[str, str]]:
 
 
 def save_img(img: Img, *, folder: str = None):
-    save_name = f'{img.title}jpg'
+    save_name = f'{img.title}.jpg'
     save_path = save_name
 
     if folder:
